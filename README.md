@@ -18,7 +18,11 @@ Since the files are long, here is the topicwise list of every part of this proje
 #### Important Note
 - If you are using HTML files to evaluate no need for any setup system, rather [directly refer to `contents.html` for easy navigation](contents.html)
 
-- You may skip the analysis part as it contains analysis rather than the machine learning model
+- You may skip the analysis part as it contains analysis rather than the machine learning model and was not demanded, but was important for the latter part of the project.
+
+    I will recommend to go through analysis not for evaluation but rather for knowledge and learning facts from the raw data without having any prior knowledge!
+
+    I have added [a small summary at the end](#analysis-results), make sure you atleast go through that before getting into the project.
 
 #### Index
 1. [Analysis of the Dataset : analysis.ipynb](analysis.ipynb) (can be skipped - *Read note above*)
@@ -103,3 +107,27 @@ git clone https://github.com/dvishal485/machine-learning-model
     - [contents.html](contents.html)
     - [main_project.html](main_project.html)
     - [analysis.html](analysis.html)
+
+---
+
+## Analysis Results
+
+By doing the analysis, I was able to deduce the following facts :
+
+1. Liver Disease is closely related to levels of `Alkaline Phosphatase (ALP)` (`alkphos`) and `Aspartate Aminotransferase (AST)` (`sgot`)
+    
+    <img src="images/dependence.png" width=500 alt="dependence"/>
+1. Men are more likely to suffer from Liver Disease as compared to Women!
+1. Along with these factors, a side-role is also played by the `Alanine Aminotransferase (ALT)` (`sgpt`), but it's contribution is relatively lower to the other factors, leading to hypothesis that `sgpt` is a factor which have to be considered along with the leading factors like `ALP` and `AST`
+1. In general most of the factors are highly gender dependent. The levels of `Direct Bilirubin`, `Total Bilirubin` and `Albumin` & hence the `Albumin and Globulin Ratio` are higher in men.
+1. From the histograms generated during the analysis, we might say that the distribution curve of these factors despite being gender dependent is similar for both genders. The shape of curve is indistinguishable, only the spread of the curve varies!
+    - Note : y-axis reresents the frequency and since we have more data avaliable for men, the frequency is higher. But regardless of the frequency the two data can be compared through visualization!
+
+    <img src="images/Albumin.png" width=500 alt="Albumin levels comparision"/>
+1. Factors which are somehow corelated doesn't seem so random.
+
+    <img src="images/corelations.png" width=500 alt="corelations"/>
+    
+    Infact, they form a linear relation upto a certain point. And even beyond those points they can be visualized on a straight line!
+
+    <img src="images/sgpt_sgot_rltn.png" width=500 alt="sgpt sgot relations"/>
